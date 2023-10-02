@@ -1,19 +1,28 @@
 <template>
-  <TheHeader/>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TheHeader>
+    <template v-slot:titulo>
+      <h1 class="header-title">Vue.js</h1>
+    </template>
+    <template v-slot:descricao>
+      <p class="header-description">Curso de Vue.js</p>
+    </template>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis necessitatibus cumque, tempora ipsum quos laborum omnis quasi eos accusamus sequi? Repellat sequi numquam provident perferendis temporibus consequatur quae molestiae at.
+  </TheHeader>
+  <BaseCard>
+
+  </BaseCard>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import TheHeader from './components/TheHeader.vue';
+import BaseCard from '@/components/BaseCard.vue';
+import TheHeader from '@/components/TheHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    TheHeader
-  }
+    TheHeader,
+    BaseCard
+}
 }
 </script>
 
