@@ -1,26 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/servicos">Servicos</router-link>
-  </nav>
+  <TheHeader/>
   
   <router-view/>
 
 </template>
 
 <script>
+import TheHeader from './components/TheHeader.vue';
+
   export default {
     name: 'App',
-    created() {
-      const newUser = {
-        firstName: 'João',
-        lastName: 'Vitor',
-        email: 'joao@gmail.com',
-      }
-      this.$store.commit('storedUser', newUser);
-    }
-  }
+    components: { TheHeader }
+}
 </script>
 
 <style>

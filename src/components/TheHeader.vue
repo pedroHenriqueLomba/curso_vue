@@ -1,20 +1,17 @@
 <template>
     <header>
-        <h1 class="header-title">
-            <slot name="titulo" />
-        </h1>
-        <h3 class="header-description">
-            <slot name="descricao" />
-        </h3>
-        <p>
-            <slot />
-        </p>
+        <nav>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link> |
+            <router-link to="/servicos">Servicos</router-link> |
+            <router-link to="/products">Produtos</router-link>
+        </nav>
     </header>
 </template>
 
 <script>
 export default {
-
+    name: 'TheHeader'
 }
 </script>
 
@@ -26,6 +23,7 @@ export default {
     margin: 0;
     padding: 0;
 }
+
 .header-description {
     background-color: #00AAAA;
     font-size: 2rem;

@@ -22,14 +22,13 @@ export default createStore({
         price: 250,
       }
     ],
+    cart: []
   },
   // Altera as variáveis do state
   mutations: {
-    storedUser(state, newUser) {
-      console.log(state.user);
-      state.user = newUser;
-      console.log(state.user);
-    },
+    addProduct(state, product) {
+      state.cart.push(product);
+    }
   },
   actions: {},
   getters: {},
