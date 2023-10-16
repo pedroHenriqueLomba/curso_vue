@@ -4,8 +4,24 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/servicos">Servicos</router-link>
   </nav>
+  
   <router-view/>
+
 </template>
+
+<script>
+  export default {
+    name: 'App',
+    created() {
+      const newUser = {
+        firstName: 'João',
+        lastName: 'Vitor',
+        email: 'joao@gmail.com',
+      }
+      this.$store.commit('storedUser', newUser);
+    }
+  }
+</script>
 
 <style>
 #app {
