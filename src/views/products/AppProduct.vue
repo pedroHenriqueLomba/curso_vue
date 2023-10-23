@@ -2,7 +2,7 @@
     <div>
         <h1>{{ product.name }}</h1>
         <p>{{ product.price }}</p>
-        <button @click="addProduct()" type="button">Adicionar</button>
+        <button @click="storeProduct()" type="button">Adicionar</button>
     </div>
 </template>
 
@@ -14,10 +14,15 @@ export default {
     },
 
     methods: {
-        addProduct() {
-            this.$store.commit('addProduct', this.product);
+        // addProduct() {
+        //     this.$store.commit('addProduct', this.product);
+        // }
+        storeProduct() {
+            this.$store.dispatch('storeProduct', this.product).then(() => {
+                console.log('acabou');
+            })
         }
-    }
+    }  
 }
 </script>
 

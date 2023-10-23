@@ -4,6 +4,8 @@
         :key="product.id"
         :product="product"
     />
+
+    {{ $store.getters.calculaTotalProdutos }}
 </template>
 
 <script>

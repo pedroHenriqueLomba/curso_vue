@@ -30,6 +30,25 @@ export default createStore({
       state.cart.push(product);
     }
   },
-  actions: {},
-  getters: {},
+  // Funciona como as propriedades computadas
+  getters: {
+      calculaTotalProdutos(state) {
+        let total = 0;
+        state.cart.forEach(product => {
+          total += product.price;
+        });
+        return total;
+      }
+  },
+  // Funciona como a mutation, no entanto pode funcionar de maneira assíncrona
+  actions: {
+    storeProduct(/* context, product */) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+          console.log('aqui');
+        }, 1000);
+      });
+    }
+  }
 });
